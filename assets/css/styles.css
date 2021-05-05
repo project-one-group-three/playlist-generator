@@ -1,0 +1,40 @@
+/* Universal Variables */
+:root {
+    --main-color: #fc7400;
+    --background-color: #000000;
+    --medium-gray: #888888;
+}
+
+html {
+    background-color: var(--background-color);
+}
+
+body {
+    font-family: 'Play', sans-serif;
+    background-color: var(--background-color);
+    margin-top: 5rem;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+h1 {
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+.form-inline {
+    display: inline-grid;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: flex;
+    margin: auto;
+    margin-top: 1rem;
+}

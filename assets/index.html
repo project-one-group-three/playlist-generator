@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="reset" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Vibe Check</title>
 
 </head>
+
 <body>
     <header>
         <h1>Vibe Check</h1>
         <p>The best playlist generator on this corner of internet!</p>
     </header>
-    <button>Create Playlist</button>
-    <form>
-        <fieldset class="group">
-            <legend>Select music genre</legend>
-            <ul class="checkbox">
-              <li>
-                <input type="checkbox" id="cb1" value="rock & roll" />
-                <label for="cb1">Rock & Roll</label>
-              </li>
-              <li>
-                <input type="checkbox" id="cb2" value="jazz" />
-                <label for="cb2">Jazz</label>
-              </li>
-              <li>
-                <input type="checkbox" id="cb3" value="mushrooms" />
-                <label for="cb3">Mushrooms</label>
-              </li>
-            </ul>
-          </fieldset>
-          <button>Submit Form</button>
+    <button type="submit" class="btn btn-warning">Create Playlist</button>
+    <form class="form-inline">
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Select Music Genre</label>
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+            <option selected>Choose...</option>
+            <option value="1">Rock & Roll</option>
+            <option value="2">Jazz</option>
+            <option value="3">Pop</option>
+        </select>
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Select Mood</label>
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+            <option selected>Choose...</option>
+            <option value="1">Happy</option>
+            <option value="2">Relaxed</option>
+            <option value="3">Calm</option>
+        </select>
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Select Playlist Length</label>
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+            <option selected>Choose...</option>
+            <option value="1">15 Songs</option>
+            <option value="2">20 Songs</option>
+            <option value="3">25 Songs</option>
+        </select>
+
+        <div class="custom-control custom-checkbox my-1 mr-sm-2">
+            <input type="checkbox" class="custom-control-input" id="customControlInline">
+            <label class="custom-control-label" for="customControlInline">Remember my Playlist</label>
+        </div>
+        <button type="submit" class="btn btn-warning">Submit</button>
     </form>
-    <section>
+    <section class="container">
         <ol>
 
         </ol>
