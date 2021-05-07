@@ -2,7 +2,8 @@
 :root {
     --main-color: #fc7400;
     --background-color: #000000;
-    --medium-gray: #888888;
+    --secondary-color: #dad74a;
+    --text-color: #f1f1f1;
 }
 
 html {
@@ -10,17 +11,18 @@ html {
 }
 
 body {
-    font-family: 'Play', sans-serif;
     background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Play', sans-serif;
     margin-top: 5rem;
     text-align: center;
-    color: #f1f1f1;
 }
 
 h1 {
     color: var(--main-color);
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 p {
@@ -37,4 +39,10 @@ p {
     display: flex;
     margin: auto;
     margin-top: 1rem;
+}
+
+.btn-warning:hover {
+    color: #e6e7e7;
+    background-color: var(--main-color);
+    border-color: #d39e00;
 }
