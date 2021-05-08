@@ -30,10 +30,19 @@ p {
     justify-content: center;
 }
 
+ul {
+    list-style-type: none;
+}
+.d-f {
+    flex-wrap: wrap;
+    display: flex;
+}
+
 .form-inline {
     display: inline-grid;
     margin-top: 2rem;
 }
+
 
 .btn {
     display: flex;
