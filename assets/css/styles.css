@@ -2,7 +2,8 @@
 :root {
     --main-color: #fc7400;
     --background-color: #000000;
-    --medium-gray: #888888;
+    --secondary-color: #e6e219;
+    --text-color: #f1f1f1;
 }
 
 html {
@@ -10,31 +11,60 @@ html {
 }
 
 body {
-    font-family: 'Play', sans-serif;
     background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Play', sans-serif;
     margin-top: 5rem;
     text-align: center;
-    color: #f1f1f1;
 }
 
 h1 {
     color: var(--main-color);
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 p {
+    color: var(--secondary-color);
     display: flex;
     justify-content: center;
 }
 
-.form-inline {
-    display: inline-grid;
+.msg {
     margin-top: 2rem;
 }
 
-.btn {
+ul {
+    list-style-type: none;
+    margin-top: 2rem;
+}
+
+.d-f {
+    flex-wrap: wrap;
     display: flex;
+    justify-content: space-evenly;
+    padding-right: 40px;
+}
+
+.form-inline {
+    display: inline-grid;
+}
+
+.submit {
     margin: auto;
     margin-top: 1rem;
+    display: flex;
 }
+
+.save, .clear {
+    margin-inline: .5rem;
+    margin-top: 1rem;
+}
+
+.btn-warning:hover {
+    color: #e6e7e7;
+    background-color: var(--main-color);
+    border-color: #d39e00;
+}
+
