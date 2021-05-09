@@ -44,12 +44,14 @@
             <option value="20">20 Songs</option>
             <option value="25">25 Songs</option>
         </select>
-        <button id="submitBtn" type="submit" class="btn btn-warning">Submit</button>
-        <button id="saveBtn" type="submit" class="btn btn-warning">Save Playlist</button>
-        <button id="clearBtn" type="submit" class="btn btn-warning">Clear Playlist</button>
     </form>
+    <button id="submitBtn" type="submit" class="btn submit btn-warning">Submit</button>
+    <div class="wrapper">
+        <button id="saveBtn" type="submit" class="btn save btn-warning">Save Playlist</button>
+        <button id="clearBtn" type="submit" class="btn clear btn-warning">Clear Playlist</button>
+    </div>
 
-    <section id="lengthMessage">
+    <section id="lengthMessage" class="msg">
     </section>
     <section>
         <ul id="songContainer" class="d-f"></ul>

@@ -2,7 +2,7 @@
 :root {
     --main-color: #fc7400;
     --background-color: #000000;
-    --secondary-color: #dad74a;
+    --secondary-color: #e6e219;
     --text-color: #f1f1f1;
 }
 
@@ -26,27 +26,39 @@ h1 {
 }
 
 p {
+    color: var(--secondary-color);
     display: flex;
     justify-content: center;
 }
 
+.msg {
+    margin-top: 2rem;
+}
+
 ul {
     list-style-type: none;
+    margin-top: 2rem;
 }
+
 .d-f {
     flex-wrap: wrap;
     display: flex;
+    justify-content: space-evenly;
+    padding-right: 40px;
 }
 
 .form-inline {
     display: inline-grid;
-    margin-top: 2rem;
 }
 
-
-.btn {
-    display: flex;
+.submit {
     margin: auto;
+    margin-top: 1rem;
+    display: flex;
+}
+
+.save, .clear {
+    margin-inline: .5rem;
     margin-top: 1rem;
 }
 
@@ -55,3 +67,4 @@ ul {
     background-color: var(--main-color);
     border-color: #d39e00;
 }
+
