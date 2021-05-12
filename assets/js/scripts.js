@@ -64,7 +64,10 @@ $(document).ready(function () {
     let userLength = $("#inlineFormCustomSelectPrefthree").val();
     let userTempo = $("#inlineFormCustomSelectPreftwo").val();
     console.log($("#inlineFormCustomSelectPrefone").val());
+    $("#songContainer").text("");
+    songIdList = [];
     getToken(userGenre, userLength, userTempo);
+    $("#lengthMessage").text("");
   });
 })
 
@@ -96,4 +99,5 @@ function clearPlaylist(event) {
   localStorage.clear();
   songIdList = [];
   $("#songContainer").text("");
+  $("#lengthMessage").text("");
 };
