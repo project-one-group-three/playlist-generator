@@ -70,6 +70,8 @@ $(document).ready(function () {
     $("#lengthMessage").text("");
     $("#form").addClass("d-n");
     $("#createNewBtn").removeClass("d-n");
+    $("#saveBtn").removeClass("d-n");
+    $("#clearBtn").removeClass("d-n");
   });
 })
 
@@ -99,12 +101,21 @@ function savePlaylist(event) {
 
 function getSavedPlaylist() {
   let oldSavedPlaylist = JSON.parse(localStorage.getItem("playlist")) || [];
-  for (i = 0; i < oldSavedPlaylist.length; i++) {
-    $("#songContainer").append(
-      `<li><iframe id="songPlayer" src="https://open.spotify.com/embed/track/${oldSavedPlaylist[i]}" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>`
-    );
+  // Trying to display clear button if local storage has value
+ /* if(oldSavedPlaylist !== null) {
+    for (i = 0; i < oldSavedPlaylist.length; i++) {
+      $("#songContainer").append(
+        `<li><iframe id="songPlayer" src="https://open.spotify.com/embed/track/${oldSavedPlaylist[i]}" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>`
+      );
+    }
+    $("#clearBtn").removeClass("d-n");
+  } else { */
+    for (i = 0; i < oldSavedPlaylist.length; i++) {
+      $("#songContainer").append(
+        `<li><iframe id="songPlayer" src="https://open.spotify.com/embed/track/${oldSavedPlaylist[i]}" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>`
+      );
+    }
   }
-}
 
 function clearPlaylist(event) {
   event.preventDefault();
@@ -112,4 +123,6 @@ function clearPlaylist(event) {
   songIdList = [];
   $("#songContainer").text("");
   $("#lengthMessage").text("");
+  $("#saveBtn").addClass("d-n");
+  $("#clearBtn").addClass("d-n");
 };
