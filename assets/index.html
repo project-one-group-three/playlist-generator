@@ -22,13 +22,21 @@
         <h1>Vibe Check</h1>
         <p>The best playlist generator on this corner of internet!</p>
     </header>
-    <form class="form-inline">
+    <form class="form-inline" id="form">
         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Select Music Genre</label>
         <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPrefone">
             <option>Choose...</option>
             <option value="rock-n-roll">Rock & Roll</option>
             <option value="funk">Funk</option>
             <option value="pop">Pop</option>
+            <option value="hip-hop">Hip-Hop</option>
+            <option value="techno">Techno</option>
+            <option value="classical">Classical</option>
+            <option value="work-out">Workout</option>
+            <option value="latin">Latin</option>
+            <option value="dubstep">Dubstep</option>
+            <option value="sad">Sad</option>
+            <option value="r-n-b">R & B</option>
         </select>
         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Select Mood</label>
         <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPreftwo">
@@ -44,8 +52,11 @@
             <option value="20">20 Songs</option>
             <option value="25">25 Songs</option>
         </select>
+        <button id="submitBtn" type="submit" class="btn submit btn-warning">Submit</button>
     </form>
-    <button id="submitBtn" type="submit" class="btn submit btn-warning">Submit</button>
+
+    <button id="createNewBtn" type="submit" class="btn submit btn-warning d-n">Create A New Playlist</button>
+
     <div class="wrapper">
         <button id="saveBtn" type="submit" class="btn save btn-warning">Save Playlist</button>
         <button id="clearBtn" type="submit" class="btn clear btn-warning">Clear Playlist</button>

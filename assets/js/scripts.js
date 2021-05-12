@@ -68,6 +68,8 @@ $(document).ready(function () {
     songIdList = [];
     getToken(userGenre, userLength, userTempo);
     $("#lengthMessage").text("");
+    $("#form").addClass("d-n");
+    $("#createNewBtn").removeClass("d-n");
   });
 })
 
@@ -78,6 +80,16 @@ function showLengthMessage(userLength) {
 
 $("#saveBtn").on("click", savePlaylist);
 $("#clearBtn").on("click", clearPlaylist);
+$("#createNewBtn").on("click", showForm);
+
+function showForm() {
+  $("#form").removeClass("d-n");
+  hideButton();
+}
+
+function hideButton() {
+  $("#createNewBtn").addClass("d-n");
+}
 
 function savePlaylist(event) {
   event.preventDefault();
