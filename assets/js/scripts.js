@@ -3,7 +3,6 @@ let songIdList = [];
 let songContainer = $("#songContainer");
 let saveBtn = $("#saveBtn");
 
-
 function getToken(userGenre, userLength, userTempo) {
   console.log(userGenre);
   const clientId = "4c2b7382b83842179f3780349cc8b6a6";
@@ -30,7 +29,7 @@ function getToken(userGenre, userLength, userTempo) {
       )
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
+          console.log(data);
           for (i = 0; i < data.tracks.length; i++) {
             songIdList.push(data.tracks[i].id);
           }
@@ -40,22 +39,20 @@ function getToken(userGenre, userLength, userTempo) {
             showLengthMessage(userLength);
           }
         });
-
     });
-
 }
 
 function showSongs() {
   console.log(songIdList);
   for (i = 0; i < songIdList.length; i++) {
     $("#songContainer").append(
-      `<li><iframe id="songPlayer" src="https://open.spotify.com/embed/track/${songIdList[i]}" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>`);
+      `<li><iframe id="songPlayer" src="https://open.spotify.com/embed/track/${songIdList[i]}" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>`
+    );
   }
-};
+}
 
 $(document).ready(function () {
   getSavedPlaylist();
-
 
   // turn this into a single function
   $("#submitBtn").click(function (event) {
@@ -73,12 +70,14 @@ $(document).ready(function () {
     $("#saveBtn").removeClass("d-n");
     $("#clearBtn").removeClass("d-n");
   });
-})
+});
 
 function showLengthMessage(userLength) {
   console.log("You made it");
-  $("#lengthMessage").append(`<div>There are less than ${userLength} songs that match your criteria!</div>`);
-};
+  $("#lengthMessage").append(
+    `<div>There are less than ${userLength} songs that match your criteria!</div>`
+  );
+}
 
 $("#saveBtn").on("click", savePlaylist);
 $("#clearBtn").on("click", clearPlaylist);
@@ -102,20 +101,21 @@ function savePlaylist(event) {
 function getSavedPlaylist() {
   let oldSavedPlaylist = JSON.parse(localStorage.getItem("playlist")) || [];
   // Trying to display clear button if local storage has value
- /* if(oldSavedPlaylist !== null) {
+  if (oldSavedPlaylist !== []) {
     for (i = 0; i < oldSavedPlaylist.length; i++) {
       $("#songContainer").append(
         `<li><iframe id="songPlayer" src="https://open.spotify.com/embed/track/${oldSavedPlaylist[i]}" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>`
       );
     }
     $("#clearBtn").removeClass("d-n");
-  } else { */
+  } else {
     for (i = 0; i < oldSavedPlaylist.length; i++) {
       $("#songContainer").append(
         `<li><iframe id="songPlayer" src="https://open.spotify.com/embed/track/${oldSavedPlaylist[i]}" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>`
       );
     }
   }
+}
 
 function clearPlaylist(event) {
   event.preventDefault();
@@ -125,4 +125,4 @@ function clearPlaylist(event) {
   $("#lengthMessage").text("");
   $("#saveBtn").addClass("d-n");
   $("#clearBtn").addClass("d-n");
-};
+}
