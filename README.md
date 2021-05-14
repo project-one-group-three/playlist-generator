@@ -7,7 +7,7 @@ A playlist generator that utilizes the spotify API to pull songs based on user i
 ## Usage
 To use the app, simply navigate to the deployed site(https://project-one-group-three.github.io/vibe-check/) and make your selections. You can also clone the entire repository at (https://github.com/project-one-group-three/vibe-check).
 
-![screenshot](./assets/img/screenshot.png)
+![screenshot](assets/img/screenshot.PNG)
 
 
 ## License
