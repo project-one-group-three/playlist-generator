@@ -3,8 +3,8 @@ let songIdList = [];
 let songContainer = $("#songContainer");
 let saveBtn = $("#saveBtn");
 
+
 function getToken(userGenre, userLength, userTempo) {
-  console.log(userGenre);
   const clientId = "4c2b7382b83842179f3780349cc8b6a6";
   const clientSecret = "7a5ae8c0d13d415a9e477549ba0cfb7b";
   fetch("https://accounts.spotify.com/api/token", {
@@ -29,7 +29,7 @@ function getToken(userGenre, userLength, userTempo) {
       )
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          showUserSelection (userGenre, userTempo);
           for (i = 0; i < data.tracks.length; i++) {
             songIdList.push(data.tracks[i].id);
           }
@@ -42,8 +42,22 @@ function getToken(userGenre, userLength, userTempo) {
     });
 }
 
+function setGenre(sel){
+  globalThis.selectedGenre = (sel.options[sel.selectedIndex].text);
+}
+
+function setEnergy(sel){
+  globalThis.selectedEnergy = (sel.options[sel.selectedIndex].text);
+}
+
+
+function showUserSelection () {
+  $("#lengthMessage").append(
+    `<div>You chose ${selectedEnergy} ${selectedGenre}</div>`
+  );
+}
+
 function showSongs() {
-  console.log(songIdList);
   for (i = 0; i < songIdList.length; i++) {
     $("#songContainer").append(
       `<li><iframe id="songPlayer" src="https://open.spotify.com/embed/track/${songIdList[i]}" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>`
@@ -54,13 +68,11 @@ function showSongs() {
 $(document).ready(function () {
   getSavedPlaylist();
 
-  // turn this into a single function
   $("#submitBtn").click(function (event) {
     event.preventDefault();
     let userGenre = $("#inlineFormCustomSelectPrefone").val();
     let userLength = $("#inlineFormCustomSelectPrefthree").val();
     let userTempo = $("#inlineFormCustomSelectPreftwo").val();
-    console.log($("#inlineFormCustomSelectPrefone").val());
     $("#songContainer").text("");
     songIdList = [];
     getToken(userGenre, userLength, userTempo);
@@ -73,7 +85,6 @@ $(document).ready(function () {
 });
 
 function showLengthMessage(userLength) {
-  console.log("You made it");
   $("#lengthMessage").append(
     `<div>There are less than ${userLength} songs that match your criteria!</div>`
   );
@@ -100,8 +111,7 @@ function savePlaylist(event) {
 
 function getSavedPlaylist() {
   let oldSavedPlaylist = JSON.parse(localStorage.getItem("playlist")) || [];
-  // Trying to display clear button if local storage has value
-  if (oldSavedPlaylist !== []) {
+  if (oldSavedPlaylist.length > 0) {
     for (i = 0; i < oldSavedPlaylist.length; i++) {
       $("#songContainer").append(
         `<li><iframe id="songPlayer" src="https://open.spotify.com/embed/track/${oldSavedPlaylist[i]}" width="300" height="100" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></li>`

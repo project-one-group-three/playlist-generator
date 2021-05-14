@@ -24,7 +24,7 @@
     </header>
     <form class="form-inline" id="form">
         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Music Genre</label>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPrefone">
+        <select onChange="setGenre(this);" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPrefone">
             <option>Choose...</option>
             <option value="classical">Classical</option>
             <option value="dubstep">Dubstep</option>
@@ -39,7 +39,7 @@
             <option value="work-out">Workout</option>
         </select>
         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Energy Level</label>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPreftwo">
+        <select onChange="setEnergy(this);" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPreftwo">
             <option>Choose...</option>
             <option value="max_energy=0.3">Low Energy</option>
             <option value="min_energy=0.31&max_energy=0.6">Sweet Spot</option>
